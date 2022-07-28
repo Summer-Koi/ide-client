@@ -13,13 +13,17 @@
       <template #title>我的项目</template>
     </el-menu-item>
 
+    <el-menu-item index="settings">
+      <el-icon><Setting /></el-icon>
+      <template #title>设置</template>
+    </el-menu-item>
+
     <el-sub-menu index="1">
       <template #title>
         <el-icon><location /></el-icon>
         <span>SubMenu Test</span>
       </template>
-        <el-menu-item index="hw">item one</el-menu-item>
-        <el-menu-item index="hw">item two</el-menu-item>
+        <el-menu-item index="hw">hello world</el-menu-item>
     </el-sub-menu>
 
     <el-menu-item index="hw">
@@ -27,10 +31,6 @@
       <template #title>HelloWorld</template>
     </el-menu-item>
 
-    <el-menu-item index="settings">
-      <el-icon><Setting /></el-icon>
-      <template #title>设置</template>
-    </el-menu-item>
   </el-menu>
 </el-aside>
 </template>
