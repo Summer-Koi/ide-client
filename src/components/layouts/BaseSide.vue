@@ -1,30 +1,38 @@
 <template>
+<el-aside width="200px">
   <el-menu
     default-active="2"
     class="el-menu-vertical-demo"
     :collapse="isCollapse"
+    @open="handleOpen"
+    @close="handleClose"
+    :router="true"
   >
+    <el-menu-item index="projects">
+      <el-icon><icon-menu /></el-icon>
+      <template #title>我的项目</template>
+    </el-menu-item>
+
     <el-sub-menu index="1">
       <template #title>
         <el-icon><location /></el-icon>
-        <span>Navigator One</span>
+        <span>SubMenu Test</span>
       </template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-      <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>
+        <el-menu-item index="hw">item one</el-menu-item>
+        <el-menu-item index="hw">item two</el-menu-item>
     </el-sub-menu>
-    <el-menu-item index="2">
-      <el-icon><icon-menu /></el-icon>
-      <template #title>Navigator Two</template>
-    </el-menu-item>
-    <el-menu-item index="3" disabled>
+
+    <el-menu-item index="hw">
       <el-icon><document /></el-icon>
-      <template #title>Navigator Three</template>
+      <template #title>HelloWorld</template>
+    </el-menu-item>
+
+    <el-menu-item index="settings">
+      <el-icon><Setting /></el-icon>
+      <template #title>设置</template>
     </el-menu-item>
   </el-menu>
+</el-aside>
 </template>
 
 <script lang="ts" setup>
@@ -36,7 +44,7 @@ import {
   Setting,
 } from '@element-plus/icons-vue'
 
-const isCollapse = ref(true)
+const isCollapse = ref(false)
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
@@ -45,3 +53,10 @@ const handleClose = (key: string, keyPath: string[]) => {
 }
 </script>
 
+<style>
+.el-menu-vertical-demo{
+  width: 200px;
+  min-height: 400px;
+  height: 100vh;
+}
+</style>

@@ -15,6 +15,7 @@ const toast = () => {
 </script>
 
 <template>
+<div>
   <h1>{{ msg }}</h1>
 
   <p>
@@ -60,6 +61,7 @@ const toast = () => {
       target="_blank"
     >unplugin-element-plus/examples/vite</a>
   </p>
+</div>
 </template>
 
 <style>

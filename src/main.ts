@@ -16,7 +16,7 @@ import 'uno.css'
 import "element-plus/theme-chalk/src/message.scss"
 
 // use vue-router
-import router from '~/router/router'
+import {router} from '~/router/router'
 
 const app = createApp(App);
 // app.use(ElementPlus);
