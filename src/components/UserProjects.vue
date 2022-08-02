@@ -1,7 +1,14 @@
 <template>
     <el-container>
         <el-header>
-            <div class="header"> Header </div>
+            <div class="header"> 
+                <div class="title">
+                    全部项目
+                </div>
+                <el-button type="primary" :icon="Plus" class="create">
+                新建项目
+            </el-button>
+            </div>
         </el-header>
         <el-main style="height:0;">
             <el-scrollbar>
@@ -40,7 +47,8 @@
 <script lang="ts" setup>
 import { ref, unref } from 'vue'
 import {
-    MoreFilled
+    MoreFilled,
+    Plus
 } from '@element-plus/icons-vue'
 
 const currentDate = ref(new Date())
@@ -65,7 +73,7 @@ const projectList = [
 ]
 
 const selectedProject = ref('')
-const infoButtonClicked = function (e) {
+const infoButtonClicked = function (e:object) {
     console.log(e)
 }
 
@@ -97,5 +105,21 @@ const infoButtonClicked = function (e) {
 .project_date {
     flex: 0 0 auto;
     color: gray;
+}
+
+/* header */
+.header {
+    text-align: left;
+}
+.title {
+    position: relative;
+    top: 30px;
+    left: 10px;
+    font-size:xx-large;
+}
+
+.create {
+    position: relative;
+    float: right;
 }
 </style>
