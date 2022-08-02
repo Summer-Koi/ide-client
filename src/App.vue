@@ -4,7 +4,7 @@
 
 <style>
 #app {
-  text-align: center;
+  /* text-align: center; */
   color: var(--ep-text-color-primary);
 }
 

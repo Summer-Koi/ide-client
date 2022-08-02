@@ -1,7 +1,7 @@
 <template>
 <el-aside width="200px">
   <el-menu
-    default-active="2"
+    default-active="projects"
     class="el-menu-vertical-demo"
     :collapse="isCollapse"
     @open="handleOpen"

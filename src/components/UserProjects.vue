@@ -15,20 +15,21 @@
                 <div style="margin-bottom: 15px"></div>
                 <el-space fill wrap style="width: 100%">
                     <el-card v-for="proj in projectList" :key="proj['date']" class="project_card" shadow="hover">
-                        <div class="card_content">
+                        <div class="card_content" @click="cardClicked">
                             <div class="project_name">
                                 {{ proj.proj_name }}
                             </div>
                             <div class="project_date">
                                 {{ proj.date }}
                             </div>
+                            <el-divider direction="vertical" />
                             <div class="project_info_icon">
-                                <el-popover placement="bottom" :width="150" trigger="hover"
+                                <el-popover placement="left" :width="150" trigger="hover"
                                     :hide-after="100">
                                     <div class="more_wrapper">  
                                         <el-space direction="vertical" size="small">
-                                            <el-button plain class="info_bt" @click="infoButtonClicked(proj)">重命名</el-button>
-                                            <el-button type="danger" plain class="info_bt" @click="infoButtonClicked(proj)">删除</el-button>
+                                            <el-button plain class="info_bt" @click="infoButtonClicked(proj, 'rename')">重命名</el-button>
+                                            <el-button type="danger" plain class="info_bt" @click="infoButtonClicked(proj, 'delete')">删除</el-button>
                                         </el-space>
                                     </div>
                                     <template #reference>
@@ -69,12 +70,24 @@ const projectList = [
         pl_type: 'javascript',
         ui_state:{
         }
+    },
+    {
+        date: '1926-08-17',
+        proj_id: 3,
+        proj_name: 'example project3',
+        pl_type: 'javascript',
+        ui_state:{
+        }
     }
 ]
 
 const selectedProject = ref('')
-const infoButtonClicked = function (e:object) {
+const infoButtonClicked = function (e:object, type:string) {
     console.log(e)
+    console.log(type)
+}
+const cardClicked = function () {
+    console.log('qaq')
 }
 
 </script>
