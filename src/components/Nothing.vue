@@ -46,19 +46,14 @@ export default {
                 }
             },
         );
-        const mylinenum = function (num) {
-            let tiangan = ['甲','乙','丙','丁','戊','己','庚','辛','壬','癸']
-            let dizhi = ['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥']
-            return tiangan[Math.floor(((num-1) % 60) / 12)] + dizhi[((num-1) % 60) % 12]
-        }
+
         onMounted(() => {
             monacoEditor = monaco.editor.create(document.getElementById('editor-container'), {
                 value: props.value,
                 readOnly: false,
-                language: 'verilog',
+                language: 'cpp',
                 selectOnLineNumbers: true,
-                renderSideBySide: false,
-                lineNumbers: mylinenum
+                renderSideBySide: false
             });
             // 监听值变化
             monacoEditor.onDidChangeModelContent(() => {
@@ -75,8 +70,6 @@ export default {
             )
             console.log('clicked')
         }
-
-
 
         return {
             testc
